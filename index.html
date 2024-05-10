@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <!--AUTHOR: BRENDAN DILEO, 000879513. USE OF BOOTSTRAP, HELP OF W3SCHOOLS, AND FONTAWESOME ELEMENTS-->
+        <!-- SA0001: I BRENDAN JOHN DILEO, 000879513 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snake Game - Assignment 4 Comp. Side Web Programming</title>
+         <!-- BOOTSTRAP -->
+        <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/styles.css">
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" type="text/css" href="./node_modules/@fortawesome/fontawesome-free/css/all.css">
+        <!-- JavaScript Bundle with Popper -->
+        <script src="./node_modules/@popperjs/core/dist/umd/popper-base.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    </head>
+
+    <body class="bg-black">
+        <header class="mx-3 border-bottom">
+            <h1 class="text-center mt-3 text-white">
+                <i class="fas">DodgeBall Game</i></h1>
+            <h5 class="text-center text-white"><i>Assignment 4 - SVG and JavaScript</i></h5>
+        </header>
+
+        <main class=" my-5 text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="border">
+                            <h4 class="text-white">How to play:</h4>
+                            <ul class="bg-white text-black text-left">
+                                <li>Move the ball around with the 'w', 'a', 's', 'd' keys on the keyboard</li>
+                                <li>Or, you can move the ball around with the use of the mouse</li>
+                                <li>Choose which option at the 'Control Options' part of the menu.</li>
+                                <li>To reset the movement from Mouse, to Keyboard, refresh the page</li>
+                                <li>Avoid the spikes to stay alive, every second alive counts as +1 score</li>
+                                <li>Make contact with blue and red balls to get +10 points
+                                    <ul>
+                                        <li>
+                                            When you make contact with a red and blue item, you will grow in size.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li> Make contact with a green and purple ball to get +5 points
+                                    <ul>
+                                        <li>
+                                            When you make contact with a green and pruple ball, you will shrink in size.
+                                        </li>
+                                        <li>
+                                            This can only be done when you have grown atleast one time.
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>How long can you stay alive?!</li>
+                            </ul> <!-- Ends unorganize list-->
+                        </div> <!-- Ends border -->
+                    </div> <!-- Ends column -->
+                </div> <!-- Ends row -->
+            </div> <!-- Ends container -->
+
+            <div class="row justify-content-center mt-4">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="row border bg-white">
+                        <h4 class="text-black border-bottom">Difficulty</h4>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <button id="hardButton" onclick="" class="btn btn-primary btn-block btn-outline-success mt-3 border mx-auto text-light">Hard</button>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <button id="normalButton" class="btn btn-primary btn-block btn-outline-success mt-3 border mx-auto text-light">Normal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <svg class="border mt-4" width="700" height="700" xmlns="http://www.w3.org/2000/svg" tabindex="0">
+                        <rect id="stage" x="0" y="0" width="700" height="700" fill="lightyellow"/>
+                        
+                        <!-- Dodgeball that the player controls-->
+                        <g id="dodgeBall">
+                            <circle cx="70" cy="580" r="10" fill="red"/>
+                            <circle cx="66" cy="575" r="2" fill="black"/>
+                            <circle cx="75" cy="575" r="2" fill="black"/>
+                            <line x1="66" y1="581" x2="75" y2="581" stroke="black" stroke-width="2"/>
+                        </g>
+                        
+                        <g id="dodgeObject1">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect1" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject2">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect2" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject3">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect3" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject4">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect4" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject5">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect5" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject6">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect6" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject7">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect7" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject8">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect8" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject9">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect9" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="dodgeObject10">
+                            <!-- Ends the game when the DodgeBall is hit by the dodge object -->
+                            <rect id="dodgeObjectRect10" x="50" y="5" width="20" height="60" fill="black"/>
+                            <polygon points="50,65 70,65 60,85" fill="red"/>
+                        </g>
+
+                        <g id="growObject">
+                            <defs>
+                                <linearGradient id="gradGrow1" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Circle Grow Object - Grows the DodgeBalls Size -->
+                            <circle cx="500" cy="0" r="15" fill="url(#gradGrow1)"/>
+                        </g>
+
+                        <g id="growObject2">
+                            <defs>
+                                <linearGradient id="gradGroww" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(0,0,255);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Circle Grow Object - Grows the DodgeBalls Size -->
+                            <circle cx="500" cy="0" r="15" fill="url(#gradGrow2)"/>
+                        </g>
+
+                        <g id="shrinkObject">
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:rgb(0, 255, 170);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:rgb(237, 36, 255);stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Circle Shrink Object - Shrinks the DodgeBalls Size -->
+                            <circle cx="120" cy="0" r="15" fill="url(#grad2)"/>
+                        </g>
+
+                        <rect x="0" y="0" width="700" height="100" fill="red"/>
+                        <text x="120" y="40" font-family="Comic Sans MS" font-size="40" fill="purple">Dodge-Ball (Dodge, or Die)</text>
+                        <text id="score" x="100" y="80" font-family="Comic Sans MS" font-size="20" fill="white">Score: 0</text>
+                        <text id="highScore" x="500" y="80" font-family="Comic Sans MS" font-size="20" fill="white">High-Score: </text>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-4 col-md-6 col-sm-8">
+                    <div class="row border  mt-1 bg-white">
+                        <h4 class="text-black border-bottom">Menu:</h4>
+                        <div class="col-lg-4 col-md-4 col-sm-3">
+                            <button id="resetButton" onclick="resetGameScreen()" class="btn btn-primary btn-block btn-outline-success mt-3 border mx-auto text-light">Reset</button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-3">
+                            <button id="pauseGameButton" class="btn btn-primary btn-block btn-outline-success mt-3 border mx-auto text-light">Pause</button>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-3">
+                            <button id="helpButton" onclick="helpAlert()" class="btn btn-primary btn-block btn-outline-success mt-3 border mx-auto text-light">Help</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="row justify-content-center bg-white mb-5">
+                <h4 class="text-dark text-center border-black border-top">
+                    <i class="font-italic">© 2024, Brendan Dileo, 000879513, Mohawk College.</i>
+                    <br>
+                    <i class="font-italic"> Use of Bootstrap, and FontAwesome Elements.</i>
+                </h4>
+            </div>
+            <!-- LINK TO MY JS FILE -->
+            <script src="./js/website.js"></script>
+        </footer>
+    </body>
+</html>
