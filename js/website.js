@@ -6,8 +6,8 @@ interacting with the other objects, they can increase their score even more. How
 to grow, or shrink, maker it easier, and harder to avoid the obstacles.
 */
 
-/** BRENDAN DILEO, 000879513. USE OF BOOTSTRAP, AND HELP OF W3SCHOOLS */
-/** SA0001: I BRENDAN JOHN DILEO, 000879513 certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. */
+/** BRENDAN DILEOUSE OF BOOTSTRAP, AND HELP OF W3SCHOOLS */
+/** SA0001: I BRENDAN JOHN DILEO, certify that this material is my original work. No other person's work has been used without due acknowledgement. I have not made my work available to anyone else. */
 
 
 // Here I have assigned each variable with its corresponding element from the html page using the 'document.getElementById' funciton. 
